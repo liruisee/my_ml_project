@@ -31,7 +31,7 @@ class LinearRegressionModel(LoadDataModel):
         super().__init__(**kwargs)
         self.init_model = LinearRegression()
 
-    # 训练模型，采用线性回归
+    # 训练模型
     def train(self):
         assert (self.x_train is not None and self.y_train is not None), '训练数据为None，无法进行训练，请尝试先执行load_data方法'
         self.init_model.fit(self.x_train, self.y_train)
@@ -60,7 +60,7 @@ class RidgeModel(LoadDataModel):
         else:
             self.init_model = Ridge()
 
-    # 训练模型，采用线性回归
+    # 训练模型
     def train(self):
         assert (self.x_train is not None and self.y_train is not None), '训练数据为None，无法进行训练，请尝试先执行load_data方法'
         self.init_model.fit(self.x_train, self.y_train)
@@ -91,7 +91,7 @@ class RidgeCVModel(LoadDataModel):
         # 模型
         self.alpha_ = None
 
-    # 训练模型，采用线性回归
+    # 训练模型
     def train(self):
         assert (self.x_train is not None and self.y_train is not None), '训练数据为None，无法进行训练，请尝试先执行load_data方法'
         self.init_model.fit(self.x_train, self.y_train)
@@ -126,7 +126,7 @@ class LassoModel(LoadDataModel):
         else:
             self.init_model = Lasso()
 
-    # 训练模型，采用线性回归
+    # 训练模型
     def train(self):
         assert (self.x_train is not None and self.y_train is not None), '训练数据为None，无法进行训练，请尝试先执行load_data方法'
         self.init_model.fit(self.x_train, self.y_train)
@@ -157,7 +157,7 @@ class LassoCVModel(LoadDataModel):
         # 模型
         self.alpha_ = None
 
-    # 训练模型，采用线性回归
+    # 训练模型
     def train(self):
         assert (self.x_train is not None and self.y_train is not None), '训练数据为None，无法进行训练，请尝试先执行load_data方法'
         self.init_model.fit(self.x_train, self.y_train)
@@ -187,7 +187,7 @@ class LassoLarsCVModel(LoadDataModel):
         super().__init__(**kwargs)
         self.init_model = LassoLarsCV()
 
-    # 训练模型，采用线性回归
+    # 训练模型
     def train(self):
         assert (self.x_train is not None and self.y_train is not None), '训练数据为None，无法进行训练，请尝试先执行load_data方法'
         self.init_model.fit(self.x_train, self.y_train)
@@ -211,7 +211,7 @@ class SVRModel(LoadDataModel):
         super().__init__(**kwargs)
         self.init_model = SVR()
 
-    # 训练模型，采用线性回归
+    # 训练模型
     def train(self):
         assert (self.x_train is not None and self.y_train is not None), '训练数据为None，无法进行训练，请尝试先执行load_data方法'
         self.init_model.fit(self.x_train, self.y_train)
@@ -247,7 +247,7 @@ class SGDRegressorModel(LoadDataModel):
         self.y_train = y_train
         self.y_test = y_test
 
-    # 训练模型，采用线性回归
+    # 训练模型
     def train(self):
         assert (self.x_train is not None and self.y_train is not None), '训练数据为None，无法进行训练，请尝试先执行load_data方法'
         self.init_model.fit(self.x_train, self.y_train)

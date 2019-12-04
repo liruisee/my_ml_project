@@ -33,12 +33,14 @@ class LinearDiscriminantAnalysisModel(LoadDataModel):
         super().__init__()
         self.init_model = LinearDiscriminantAnalysis()
 
+    # 训练模型
     def train(self):
         assert (self.x_train is not None and self.y_train is not None), '训练数据为None，无法进行训练，请尝试先执行load_data方法'
         self.init_model.fit(self.x_train, self.y_train)
         self.model = self.init_model
         return self.init_model
 
+    # 预测模型
     def predict(self):
         pre_datas = []
         probas = []
@@ -61,12 +63,14 @@ class SVCModel(LoadDataModel):
         super().__init__()
         self.init_model = SVC(probability=True)
 
+    # 训练模型
     def train(self):
         assert (self.x_train is not None and self.y_train is not None), '训练数据为None，无法进行训练，请尝试先执行load_data方法'
         self.init_model.fit(self.x_train, self.y_train)
         self.model = self.init_model
         return self.init_model
 
+    # 预测模型
     def predict(self):
         pre_datas = []
         probas = []
@@ -89,12 +93,14 @@ class SGDClassifierModel(LoadDataModel):
         super().__init__()
         self.init_model = SGDClassifier(loss="log", penalty="l2")
 
+    # 训练模型
     def train(self):
         assert (self.x_train is not None and self.y_train is not None), '训练数据为None，无法进行训练，请尝试先执行load_data方法'
         self.init_model.fit(self.x_train, self.y_train)
         self.model = self.init_model
         return self.init_model
 
+    # 预测模型
     def predict(self):
         pre_datas = []
         probas = []

@@ -17,11 +17,11 @@ class RegressionModel(BaseExecutor):
         self.coef_ = None
         self.intercept_ = None
 
-    # 训练模型，采用线性回归
+    # 加载数据
     def load_data(self):
         raise NotImplementedError
 
-    # 训练模型，采用线性回归
+    # 训练模型
     def train(self):
         raise NotImplementedError
 
